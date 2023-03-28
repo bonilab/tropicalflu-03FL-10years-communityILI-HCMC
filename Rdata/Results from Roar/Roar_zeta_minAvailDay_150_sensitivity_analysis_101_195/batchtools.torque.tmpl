@@ -1,0 +1,27 @@
+#!/bin/bash
+
+## Job name:
+#PBS -N multi_step_fit 
+
+## Merge standard error and output:
+#PBS -j oe
+
+## Email on abort (a) termination (e), and starting (b)
+#PBS -m e
+#PBS -M fxy19@psu.edu
+
+## Account to charge
+#PBS -A <%= resources[['account']] %>
+
+## Walltime needed:
+#PBS -l <%= resources[['walltime']] %>
+
+## Resources needed:
+#PBS -l <%= resources[['cores']] %>
+
+## Memory needed:
+#PBS -l <%= resources[["memory"]] %>
+
+## Launch R and evaluated the batchtools R job
+Rscript -e 'batchtools::doJobCollection("<%= uri %>")'
+
