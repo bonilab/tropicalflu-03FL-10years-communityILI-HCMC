@@ -1,10 +1,9 @@
 ### Calculate ILI+ from aggregated pcr fraction and daily zeta score ###
 # Note: pcr reporting is incomplete after 2019-06-26, use 20201109 version to calculate ili+
 
-setwd('~/Dropbox/Influenza and Respiratory Disease in Vietnam/code')
 rm(list = ls())
 library(dplyr)
-load('Rdata/PCR data aggregated by 21d_holiday_zeroed_20220210.RData')
+load('Rdata/PCR_data_aggregated_by_21d.RData')
 load('Rdata/7d.smth.zeta.ilipercent.Rdata')
 source('functions/Detrend and Smooth.R')
 source('functions/iliplus data analysis.R')

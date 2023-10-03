@@ -1,6 +1,5 @@
 ####### Predictor importance on lognormal model ##########
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
 source('functions/get normal model.R')
 source('functions/predictor importance.R')
 load('Rdata/Dataset_zeta_minAvailDay_150_scaled_weather_human_AR7.RData')

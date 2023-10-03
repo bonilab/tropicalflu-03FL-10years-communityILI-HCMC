@@ -5,7 +5,6 @@ library(ggplot2)
 library(RColorBrewer)
 
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
 load("Rdata/7d.smth.zeta.ilipercent.Rdata")
 source('functions/Detrend and Smooth.R')
 
@@ -116,10 +115,7 @@ all_acf_ps =
 
 all_acf_ps = plot_grid(all_acf_ps, labels = 'A')
 
-ggsave(filename = 'plots/fig2a.jpg',
-       plot = all_acf_ps,
-       width = 18,height = 12,
-       units = 'in')
+all_acf_ps
 
 
 ####### Separate time series as 5 - 10 years, and calculate their ACF ##########
@@ -197,6 +193,9 @@ n.cols = 7
 palettes = colorRampPalette(brewer.pal(n.cols,'YlOrBr'))
 colors = palettes(n.cols)
 
+acf_annual$years = as.character(acf_annual$years)
+acf_non_annual$years = as.character(acf_non_annual$years)
+
 p = ggplot() +
     geom_point(aes(x = endyear,y = acf_365,color = years,shape = cycle),
                data = acf_annual,size = 5,alpha = 0.7)+ 
@@ -228,19 +227,19 @@ p = ggplot() +
 p = plot_grid(p, labels = 'B')
 p
 
-ggsave(filename = 'plots/shift_cycle_acf_zeta.jpg',
-       plot = p, 
-       width = 7,
-       height = 6,
-       units = 'in')
+# ggsave(filename = 'plots/shift_cycle_acf_zeta.jpg',
+#        plot = p, 
+#        width = 7,
+#        height = 6,
+#        units = 'in')
 
 
 
 ############# Periodogram ##############
 
 ### choose the periodogram without smoothing
-jpeg(filename = 'plots/SuppFig4.jpg',width = 6,height = 4,units = 'in',
-     res = 300)
+# jpeg(filename = 'plots/SuppFig4.jpg',width = 6,height = 4,units = 'in',
+#      res = 300)
 zeta_perc_spec = spectrum(na.omit(zeta_perc_avg_df$smoothed_zeta_score),
                           ylab = "Amplitude",xlab = "Frequency",
                           main = "Smoothed periodogram of Zeta Score",
@@ -260,6 +259,6 @@ plot(x = 1/zeta_perc_spec$freq ,y = zeta_perc_spec$spec ,type = "h",xlim = c(0,5
 #### The two cycles with the highest spectral density ##
 points(x = cycle_spec[1,1], y = cycle_spec[1,2],pch = 20,cex = 1.5)
 points(x = cycle_spec[2,1], y = cycle_spec[2,2],pch = 20,cex = 1.5)
-dev.off()
+# dev.off()
 
 

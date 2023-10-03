@@ -5,8 +5,7 @@
 
 ###############################################################################
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
-A = read.csv("datasets/ILI reports through 191231.csv")
+A = read.csv("datasets/ILI/ILI reports through 191231.csv")
 
 source("functions/daynum.R")
 

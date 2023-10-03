@@ -5,10 +5,10 @@ We detected the annual and nonannual periodic signals in respiratory diseases an
 ## Needed plug-ins 
 `datasets` stores all the original csv files needed to reproduce the results.
 `functions` stores all the needed functions.
-`Rdata` will save all the Rdata generated from the scripts. The multiple-step function results that are generated from Roar Supercomputer in Pennsylvania State University are provided in `Results from Roar`. The ILI from other regions are provided in `Global ILI`.
+`Rdata` will save all the Rdata generated from the scripts. The multiple-step function results that are generated from Roar Supercomputer in Pennsylvania State University are provided. The ILI from other regions are provided in `Global ILI`.
 
 ## Reproduce the results of respiratory diseases (influenza-like-illness,ILI)
-Run the scripts under `ILI` in order.
+Run the scripts in order under `ILI` in order.
 
 ## Reproduce the results of influenza (ILI+)
-Run the scripts under `ILI+` in order.
+Run the scripts in order under `ILI+` in order.

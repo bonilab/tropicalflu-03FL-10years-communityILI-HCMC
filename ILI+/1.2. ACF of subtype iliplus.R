@@ -1,11 +1,9 @@
 #### ACF of subtype ILI+ ####
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
 load('Rdata/Subtype.iliplus.21d.aggregated.pcr.Rdata')
 
-
-jpeg(filename = 'plots/SuppFig8.jpg',width = 10,height = 8,
-     units = 'in',res = 300)
+# jpeg(filename = 'plots/SuppFig8.jpg',width = 10,height = 8,
+#      units = 'in',res = 300)
 par(mfcol = c(3,2),mar = c(2,3,2,2))
 ilip_names = c('H1N1 ILI+','H3N2 ILI+','B ILI+')
 for(i in 1:length(all_subtype_ilip)) {
@@ -54,5 +52,5 @@ for(i in 1:length(all_subtype_ilip)) {
                cex = 1.5)
         
 }
-dev.off()
+# dev.off()
 

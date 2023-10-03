@@ -1,5 +1,5 @@
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
+
 source("functions/Detrend and Smooth.R")
 source('functions/plotting.R')
 library(ggplot2)
@@ -43,8 +43,7 @@ plot_data_by_year(data_df = zeta_perc_avg_df,data_name = 'zeta_score_avg',
                   time_name = 'Date',ymin = 0.5,ymax = 1.6,
                   smoothed_data_name = 'smoothed_zeta_score',Nrow = 5,Ncol = 2,
                   tag = '',
-                  save = T,
-                  filename = 'plots/Figure1.jpg',
+                  save = F,
                   width = 12,
                   height = 10)
 

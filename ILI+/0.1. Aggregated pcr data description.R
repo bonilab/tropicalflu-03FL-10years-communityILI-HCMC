@@ -1,11 +1,10 @@
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
 source("functions/Data aggregation.R")
 library(ggplot2)
 library(dplyr)
 library(reshape2)
 
-ili_pcr = read.csv("datasets/AllPCRandSubtypeResults.03FLand17FL.20220210.csv",
+ili_pcr = read.csv("datasets/ILI/AllPCRandSubtypeResults.03FLand17FL.20220210.csv",
                    header = T,stringsAsFactors = F,
                    sep = ",")
 
@@ -110,7 +109,7 @@ for(var in plotted_vars) {
 }
 
 
-save(aggregated_pcr_21d,file = "Rdata/PCR data aggregated by 21d_holiday_zeroed_20220210.RData")
+save(aggregated_pcr_21d,file = "Rdata/PCR_data_aggregated_by_21d.RData")
 
 #### Descriptive Statistics ####
 ### Only consider the period before 2020-01-01

@@ -4,7 +4,7 @@ source('functions/Detrend and Smooth.R')
 source('functions/Data aggregation.R')
 
 ######## Calculate ili+ from sentinel data ##########
-sentinel_data = read.csv('datasets/Influenza PCR Data/Southern_Vn_Flu_Sentinel.csv')
+sentinel_data = read.csv('datasets/ILI/Influenza PCR Data/Southern_Vn_Flu_Sentinel.csv')
 
 # Sentinel data includes ILI patients, total patients, flu cases from 4 hospitals in southern VN
 # location 14 15 are two hospitals in HCMC

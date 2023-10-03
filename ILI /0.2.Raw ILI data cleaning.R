@@ -1,4 +1,4 @@
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
+
 source('functions/Detrend and Smooth.R')
 source('functions/series-util.r')
 source('functions/matrix-util.r')
@@ -99,7 +99,7 @@ rm(report_threshold,total_report,zero_report,zero_report_percent,removedclinics)
 ###############################################################################
 
 #### How many messeages come from 33 clinics? ###
-A = read.csv("datasets/ILI reports through 191231.csv")
+A = read.csv("datasets/ILI/ILI reports through 191231.csv")
 sum(A$gpId %in% clinic_id)
 
 ### How many visits come from 33 clinics? ###

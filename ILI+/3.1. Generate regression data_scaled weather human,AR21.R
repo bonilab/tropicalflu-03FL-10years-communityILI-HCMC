@@ -4,7 +4,7 @@ library(car)
 setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
 source('functions/Detrend and Smooth.R')
 load('Rdata/Daily weather in HCMC from NASA.Rdata')
-load('Rdata/Overall.ILIplus.21-day.aggregated.pcr_holidayNA.RData')
+load('Rdata/Overall.ILIplus.21-day.aggregated.pcr.RData')
 
 #### Processing regression data set ####
 # 1. Add school term as categorical predictors
@@ -129,7 +129,7 @@ for(j in 1:ncol(data_for_fit)) {
 
 data_for_fit = na.omit(data_for_fit)
 
-save(data_for_fit,file = 'Rdata/Data of overall iliplus_holidayNA.UV_WS_absent_scaled_weather.AR_21.human for gamma hurdle model.Rdata')
+save(data_for_fit,file = 'Rdata/Data of overall iliplus_UV_WS_absent_scaled_weather.AR_21.human for gamma hurdle model.Rdata')
 
 rm(list = setdiff(ls(),'data_for_fit'))
 

@@ -1,9 +1,0 @@
-### [bt]: This is batchtools v0.9.15
-### [bt]: Starting calculation of 1 jobs
-### [bt]: Setting working directory to '/storage/work/f/fxy19/Roar_us_HHS_ILI_r2_r10'
-Loading required package: listenv
-Loading required package: future
-Loading required package: stringr
-### [bt]: Memory measurement disabled
-### [bt]: Starting job [batchtools job.id=1]
-### [bt]: Setting seed to 31262 ...

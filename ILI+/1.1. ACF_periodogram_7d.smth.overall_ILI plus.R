@@ -1,7 +1,6 @@
 #### ACF of ILI plus ####
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
-load('Rdata/Overall.ILIplus.21-day.aggregated.pcr_holiday0.RData')
+load('Rdata/Overall.ILIplus.21-day.aggregated.pcr.Rdata')
 
 ## ILI plus of ILI percent
 annual = seq(365,1095,365)
@@ -28,7 +27,6 @@ mtext("B",side = 3,outer = F,line = 1,adj = 0,cex = 2)
 
 ####### peak lag in every time series ################
 rm(list = ls())
-load('../Rdata/20220325_ILI+/Overall.ILIplus.21-day.aggregated.pcr.RData')
 peak_day_ts = data.frame()
 
 for (i in 2012:2015){

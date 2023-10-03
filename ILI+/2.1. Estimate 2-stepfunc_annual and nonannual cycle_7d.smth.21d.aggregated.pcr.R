@@ -1,8 +1,7 @@
 ######## Estimate 2-step function for 7d.smth.ili+.21d-aggregated.pcr ##########
 ### Given cycle = 365 and non-annual ###
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
-load('Rdata/Overall.ILIplus.21-day.aggregated.pcr_holidayNA.RData')
+load('Rdata/Overall.ILIplus.21-day.aggregated.pcr.Rdata')
 # source('03. Fit iliplus with step function/Multiple_stepfunc_v5.R')
 source('functions/Multiple_stepfunc_v5.R')
 source('functions/plotting.R')
@@ -18,7 +17,7 @@ fits_iliplus_2N_365 = fit_multi_stepfunc(data = ili_plus_21d_df$ili_plus_smth_7d
                                          sigma_upper_limit = 0.166,
                                          iters = 100)
 
-save(fits_iliplus_2N_365,file = 'Rdata/2_stepfunc_cyc365_iliplus_holidayNA_20230125.Rdata')
+save(fits_iliplus_2N_365,file = 'Rdata/2_stepfunc_cyc365_iliplus_20230125.Rdata')
 
 load('Rdata/2_stepfunc_cyc365_iliplus_holidayNA_20230125.Rdata')
 
@@ -65,7 +64,7 @@ plot_data_with_stepfunc_by_year_fixed_cycle(data_df = ili_plus_21d_df,
 #                                          sigma_lower_limit = 0.16,
 #                                          sigma_upper_limit = 0.17,
 #                                          iters = 150)
-# save(fits_iliplus_2N_330,file = 'Rdata/2_stepfunc_cyc330_iliplus_holidayNA.Rdata')
+# save(fits_iliplus_2N_330,file = 'Rdata/2_stepfunc_cyc330_iliplus.Rdata')
 
 load('Rdata/2_stepfunc_cyc330_iliplus_holidayNA.Rdata')
 best_fit_ilip_2N_330 = select_best_fit(all_fits = fits_iliplus_2N_330,
@@ -95,7 +94,7 @@ plot_data_with_stepfunc_by_year_fixed_cycle(data_df = ili_plus_21d_df,
 #                                          sigma_lower_limit = 0.16,
 #                                          sigma_upper_limit = 0.17,
 #                                          iters = 150)
-# save(fits_iliplus_2N_385,file = 'Rdata/2_stepfunc_cyc385_iliplus_holidayNA.Rdata')
+# save(fits_iliplus_2N_385,file = 'Rdata/2_stepfunc_cyc385_iliplus.Rdata')
 
 load('Rdata/2_stepfunc_cyc385_iliplus_holidayNA.Rdata')
 best_fit_ilip_2N_385 = select_best_fit(all_fits = fits_iliplus_2N_385,

@@ -1,6 +1,5 @@
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
-weather = read.csv("datasets/POWER_Point_Daily_20100101_20191231_010d7714N_106d6895E_LST_VN.csv",
+weather = read.csv("datasets/NASA_POWER/POWER_Point_Daily_20100101_20191231_010d7714N_106d6895E_LST_VN.csv",
                    header = T,skip = 22)
 
 weather$date = as.Date(paste(weather$YEAR,weather$DOY,sep = "-"),format = "%Y-%j")

@@ -1,15 +1,14 @@
 #### predictor importance of ILI+ regression ######
 rm(list = ls())
-setwd("~/Dropbox/Influenza and Respiratory Disease in Vietnam/code")
-load('Rdata/Overall.ILIplus.21-day.aggregated.pcr_holidayNA.RData')
+load('Rdata/Overall.ILIplus.21-day.aggregated.pcr.RData')
 source('functions/predictor importance.R')
 source('functions/get gamma hurdle model.R')
 library(ggplot2)
 library(cowplot)
 
 #### cyc330 has the lowest AIC, load N-stepfunc from cyc330 cyc385 ###
-load('Rdata/ILI+_holidayNA_best_stepfunc_for_sensitivity_analysis_cyc150_450.Rdata')
-load('Rdata/Data of overall iliplus_holidayNA.UV_WS_absent_scaled_weather.AR_21.human for gamma hurdle model.Rdata')
+load('Rdata/ILI+_best_stepfunc_for_sensitivity_analysis_cyc150_450.Rdata')
+load('Rdata/Data of overall iliplus_UV_WS_absent_scaled_weather.AR_21.human for gamma hurdle model.Rdata')
 #ili_plus_21d_df$sim_ts_385 = all_iliplus_sim_ts[which(rownames(all_iliplus_sim_ts) == '385'),]
 ili_plus_21d_df$sim_ts_330 = all_iliplus_sim_ts[which(rownames(all_iliplus_sim_ts) == '330'),]
 #ili_plus_21d_df$sim_ts_365 = all_iliplus_sim_ts[which(rownames(all_iliplus_sim_ts) == '365'),]
@@ -191,7 +190,7 @@ ggsave(filename = 'plots/fig5c.jpeg',
 
 
 ### baseplot version ###
-jpeg(filename = 'plots/ILIplus_holidayNA_fitted_full_model.jpg',
+jpeg(filename = 'plots/ILIplus_fitted_full_model.jpg',
      width = 2000, height = 500, units = 'px')
 plot(data_for_fit$date,
      data_for_fit$smth_7d_iliplus,
